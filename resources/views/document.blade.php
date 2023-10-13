@@ -33,32 +33,30 @@
         <div class="col bg-body-tertiary">
 
           <div class="border p-1">
-          <h2 class="text-center">Ordem de Serviço Nº{{$order->id}}</h2>
-          <p class="text-center"><span><strong>Técnico responsável:</strong> {{$order->user->name}}</span>  -  <span><strong>Data da abertura</strong> {{$order->created_at->format('d/m/Y')}}</span></p>
+          <h2 class="text-center">Ordem de Serviço Nº{{$id}}</h2>
+          <p class="text-center"><span><strong>Técnico responsável:</strong> {{$user}}</span>  -  <span><strong>Data da abertura</strong> {{$created_at}}</span></p>
           <hr>
           <h5 class="text-center">Informações do Cliente</h5>
-          <p><strong>Nome: </strong>{{$order->customer->name}}</p>
-          <p><strong>Telefone: </strong>{{$order->customer->phone}}</p>
+          <p><strong>Nome: </strong>{{$customer}}</p>
+          <p><strong>Telefone: </strong>{{$phone}}</p>
           <br>
           <hr>
           <h5 class="text-center">Produto</h5>
-          <p>{{$order->product}}</p>
+          <p>{{$product}}</p>
           <br>
           <hr>
           <h5 class="text-center">Reclamação do Cliente</h5>
-          <p>{{$order->complaint}}</p>
+          <p>{{$complaint}}</p>
           <br>
           <hr>
           <h5 class="text-center">Diagnóstico e Serviço a Ser Executado</h5>
-          <p>{{$order->diagnosis}}</p>
+          <p>{{$diagnosis}}</p>
           <br>
           <hr>
           <h5 class="text-center">Orçamento</h5>
-          <p>R$ {{$order->value}}</p>
+          <p>R$ {{$value}}</p>
           <br>
           </div>
-          <a href="{{route('so.edit', $order->id)}}" class="btn btn-sm btn-warning m-1">Editar O.S.</a>
-          <p><small>Última Modificação {{$order->updated_at->format('d/m/Y')}}</small></p>
             
         </div>
 
@@ -66,10 +64,6 @@
 
         <div>
             <footer class="py-3 my-4">
-               <div class="text-center">
-                <a href="{{route('so.print', ['id' => $order->id])}}" class="btn btn-primary">Gerar Arquivo Para Impressão</a>
-                <a href="{{route('so.index')}}" class="btn btn-primary">Voltar</a>
-               </div>
               <p class="text-center border-top p-3 m-3 text-body-secondary">Eletrônica Modelo - Sistema O.S.</p>
             </footer>
         </div>

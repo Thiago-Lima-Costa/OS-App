@@ -49,6 +49,6 @@ Route::middleware('auth')->group(function () {
     Route::put('/service-orders/update/{id}', [ServiceOrderController::class, 'update'])->name('so.update');
     Route::delete('/service-orders/destroy/{id}', [ServiceOrderController::class, 'destroy'])->name('so.destroy');
 
-    Route::get('/generate-pdf', [PdfController::class, 'generatePdf'])->name('so.print');
+    Route::get('/generate-so/{id}', [PdfController::class, 'generatePdf'])->name('so.print');
 
 });

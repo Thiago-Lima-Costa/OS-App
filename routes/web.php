@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ServiceOrderController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PdfController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -47,4 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/service-orders/{id}/edit', [ServiceOrderController::class, 'edit'])->name('so.edit');
     Route::put('/service-orders/update/{id}', [ServiceOrderController::class, 'update'])->name('so.update');
     Route::delete('/service-orders/destroy/{id}', [ServiceOrderController::class, 'destroy'])->name('so.destroy');
+
+    Route::get('/generate-pdf', [PdfController::class, 'generatePdf'])->name('so.print');
+
 });

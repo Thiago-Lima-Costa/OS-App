@@ -10,7 +10,7 @@
     <title>Login</title>
 </head>
 <body>
-  <h2>Login</h2>
+  <h2 class="text-center m-4">Login</h2>
 
   <div class="text-center">
   
